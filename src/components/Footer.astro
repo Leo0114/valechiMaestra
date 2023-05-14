@@ -1,0 +1,44 @@
+---
+import Social from "./Media.astro";
+
+const items = [
+  { title: "Acerca de mi", path: "/about" },
+  { title: "Programas", path: "/programs" },
+  { title: "Contacto", path: "/contact" },
+];
+---
+
+<footer class="bg-stone-900 w-full">
+  <div class="container px-0 py-8 mx-auto">
+    <div class="flex flex-col items-center justify-center text-center">
+      <a href="/" class="text-4xl text-white font-thin"> Valechi Ayala</a>
+
+      <ul class="flex flex-wrap justify-center mt-6 -mx-4">
+        {
+          items.map((item) => (
+            <li>
+              <a
+                class="mx-4 text-sm text-white transition-colors duration-300 hover:text-amber-200"
+                href={item.path}
+              >
+                {item.title}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <hr class="my-6 border-gray-200 md:my-10" />
+
+    <div class="flex flex-col items-center sm:flex-row sm:justify-between">
+      <p class="text-sm text-gray-500 dark:text-gray-300">
+        © Copyright 2023. Leoncio Moran ♥.
+      </p>
+
+      <div class="flex space-x-4">
+        <Social />
+      </div>
+    </div>
+  </div>
+</footer>

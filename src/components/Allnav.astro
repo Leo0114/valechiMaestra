@@ -1,0 +1,61 @@
+---
+const items = [
+  {
+    title: "Acerca de mi",
+    path: "/about",
+  },
+  { title: "Programas", path: "/programs" },
+  {
+    title: "Contacto",
+    path: "/contact",
+  },
+];
+
+export interface Props {
+  title?: string;
+}
+
+const { title } = Astro.props;
+---
+
+<head>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.3.0/alpine-ie11.min.js"
+  />
+  <meta name="generator" content={Astro.generator} />
+  <title>Valeria Ayala | {title}</title>
+</head>
+
+<div class="text-stone-200 navbar py-4 bg-stone-900 shadow-xl">
+  <nav class="flex items-center w-[92%] mx-auto justify-between">
+    <div class="font-thin">
+      <a class="cursor-pointer text-6xl" href="/">Valechi Ayala</a>
+    </div>
+
+    <div
+      class="nav-links md:static absolute md:min-h-fit min-h-[60vh] left-0 top-[-100%] md:w-auto w-full flex items-center px-5 duration-500"
+    >
+      <ul class="flex md:flex-row flex-col md:items-center md:gap-[4vw] gap-8">
+        {
+          items.map((item) => (
+            <li class=" font-semibold ">
+              <a
+                class="block text-lg hover:text-white border-b-2 border-transparent duration-300 transform hover:border-white mx-1.5 sm:mx-6 hover:semibold "
+                href={item.path}
+              >
+                {item.title}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+    <div class="flex items-center gap-6">
+      <ion-icon
+        onclick="onToggleMenu(this)"
+        name="menu"
+        class="text-3xl cursor-pointer md:hidden"></ion-icon>
+    </div>
+  </nav>
+</div>

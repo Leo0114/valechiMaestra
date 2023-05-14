@@ -1,0 +1,105 @@
+---
+import Social from "./Media.astro";
+
+const items = [
+  {
+    title: "Acerca de mi",
+    path: "/about",
+  },
+  { title: "Programas", path: "/programs" },
+  {
+    title: "Contacto",
+    path: "/contact",
+  },
+];
+---
+
+<head>
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  />
+  <script
+    type="module"
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+  ></script>
+  <script
+    nomodule
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+  ></script>
+  <title>Valeria Ayala | Home</title>
+</head>
+
+<div class="text-stone-200 navbar h-screen navbar py-4 bg-stone-900 shadow-xl">
+  <nav class="flex items-center w-[92%] mx-auto justify-between">
+    <div class="font-thin">
+      <a class="cursor-pointer text-6xl" href="/">Valechi Ayala</a>
+    </div>
+
+    <div
+      class="nav-links md:static absolute md:min-h-fit min-h-[60vh] left-0 top-[-100%] md:w-auto w-full flex items-center px-5 duration-500"
+    >
+      <ul class="flex md:flex-row flex-col md:items-center md:gap-[4vw] gap-8">
+        {
+          items.map((item) => (
+            <li class=" font-semibold ">
+              <a
+                class="block text-lg hover:text-white border-b-2 border-transparent duration-300 transform hover:border-white mx-1.5 sm:mx-6 hover:semibold "
+                href={item.path}
+              >
+                {item.title}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+    <div class="flex items-center gap-6">
+      <ion-icon
+        onclick="onToggleMenu(this)"
+        name="menu"
+        class="text-3xl cursor-pointer md:hidden"></ion-icon>
+    </div>
+  </nav>
+
+  <div class="max-w-screen-lg mx-auto text-left md:pt-40 w-[92%]">
+    <h1 class="text-4xl">Hola</h1>
+    <h1 class="font-bold text-8xl">Mi nombre es Valeria.</h1>
+    <h1 class="text-7xl font-bold">Pianista profesional.</h1>
+
+    <p class="mt-4 text-xl">
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem,
+      at.
+    </p>
+  </div>
+
+  <div
+    class="flex justify-start items-center mt-10 max-w-screen-lg mx-auto space-x-4"
+  >
+    <Social />
+  </div>
+</div>
+
+<script>
+  const navLinks = document.querySelector(".nav-links");
+
+  function onToggleMenu(e) {
+    console.log(e);
+    const name = e.target.name;
+
+    navLinks.classList.toggle("top-[9%]", name === "menu");
+  }
+</script>
+
+<style>
+  @media only screen and (max-width: 640px) {
+    .navbar {
+      background-position: center center;
+    }
+  }
+
+  .navbar {
+    background-image: url("../../public/piano2.jpg");
+    background-size: cover;
+  }
+</style>

@@ -1,0 +1,28 @@
+---
+export interface Props {
+  title?: string;
+}
+
+const { title } = Astro.props;
+
+import Allnav from "@components/Allnav.astro";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" href="../../public/icon.svg" type="image/x-icon" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <meta name="generator" content={Astro.generator} />
+    <title>Valeria Ayala | {title}</title>
+  </head>
+  <body  class="bg-zinc-200 ">
+    <Allnav />
+    <div class="max-w-5xl mx-auto mt-16">
+      <slot />
+    </div>
+  </body>
+</html>
