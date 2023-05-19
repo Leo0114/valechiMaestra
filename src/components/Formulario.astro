@@ -1,0 +1,46 @@
+---
+---
+
+<div class="lg:w-1/2 lg:mx-10 max-w-6xl px-6 py-4 mx-auto">
+  <h1 class="text-2xl font-semibold lg:text-3xl text-stone-800">Contact Me</h1>
+
+  <p class="mt-4 text-stone-500 text-lg">I would love to read your questions</p>
+
+  <form class="mt-12 container">
+    <div class="-mx-2 md:items-center md:flex">
+      <div class="flex-1 px-2">
+        <label class="block mb-2 text-lg text-stone-800">Full Name</label>
+        <input
+          type="text"
+          placeholder="Fernando Ceballos"
+          class="block w-full px-5 py-3 mt-2 text-stone-700 placeholder-gray-400 bg-stone-100 border border-stone-200 rounded-md ray-600 00 focus:border-stone-400 stone-400 focus:ring-stone-400 focus:outline-none focus:ring focus:ring-opacity-40"
+        />
+      </div>
+
+      <div class="flex-1 px-2 mt-4 md:mt-0">
+        <label class="block mb-2 text-lg text-stone-800">Subject</label>
+        <input
+          id="asunto"
+          type="text"
+          placeholder="Classes on Fridays"
+          class="block w-full px-5 py-3 mt-2 placeholder-stone-400 bg-stone-100 border border-gray-200 rounded-md ray-600 00 focus:border-stone-400 stone-400 focus:ring-stone-400 focus:outline-none focus:ring focus:ring-opacity-40 text-stone-800"
+        />
+      </div>
+    </div>
+
+    <div class="w-full mt-4">
+      <label class="block mb-2 text-lg text-stone-800">Message</label>
+      <textarea
+        id="cuerpo"
+        class="bg-stone-100 block w-full h-32 px-5 py-3 mt-2 placeholder-gray-400 border border-gray-200 rounded-md md:h-56 ray-600 00 focus:border-stone-400 stone-400 focus:ring-stone-400 focus:outline-none focus:ring focus:ring-opacity-40 text-stone-800"
+        placeholder="Message"></textarea>
+    </div>
+
+    <button
+      class="text-white w-full px-6 py-3 mt-4 text-sm font-medium tracking-wide capitalize transition-colors duration-300 transform bg-stone-600 rounded-md hover:bg-stone-500 focus:outline-none focus:ring focus:ring-stone-300 focus:ring-opacity-50"
+      onclick="enviarCorreo()"
+    >
+      Send Email
+    </button>
+  </form>
+</div>

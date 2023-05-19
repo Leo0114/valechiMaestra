@@ -5,7 +5,7 @@ export interface Props {
 
 const { title } = Astro.props;
 
-import Allnav from "@components/Allnav.astro";
+import Navbar3 from "@components/Navbar3.astro";
 ---
 
 <!DOCTYPE html>
@@ -30,7 +30,7 @@ import Allnav from "@components/Allnav.astro";
     <title>Valeria Ayala | {title}</title>
   </head>
   <body class="bg-zinc-200">
-    <Allnav />
+    <Navbar3 />
     <div class="max-w-5xl mx-auto mt-16">
       <slot />
     </div>
